@@ -1,7 +1,6 @@
 const palette = document.querySelector('.palette');
 const generateBtn = document.getElementById('generate-btn');
 
-// Function to generate a random hex color
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
@@ -11,9 +10,8 @@ function getRandomColor() {
   return color;
 }
 
-// Function to generate the color palette
 function generatePalette() {
-  palette.innerHTML = ''; // Clear previous colors
+  palette.innerHTML = ''; 
   for (let i = 0; i < 5; i++) {
     const color = getRandomColor();
     const colorBox = document.createElement('div');
@@ -21,7 +19,6 @@ function generatePalette() {
     colorBox.style.backgroundColor = color;
     colorBox.textContent = color;
 
-    // Add click event to copy color code
     colorBox.addEventListener('click', () => {
       navigator.clipboard.writeText(color).then(() => {
         alert(`Copied: ${color}`);
